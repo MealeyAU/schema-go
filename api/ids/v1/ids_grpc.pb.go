@@ -37,7 +37,7 @@ func NewIdServiceClient(cc grpc.ClientConnInterface) IdServiceClient {
 
 func (c *idServiceClient) Generate(ctx context.Context, in *GenerateRequest, opts ...grpc.CallOption) (*GenerateResult, error) {
 	out := new(GenerateResult)
-	err := c.cc.Invoke(ctx, "/mealey.api.ids.v1.IdService/Generate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/mealeyau.api.ids.v1.IdService/Generate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +46,7 @@ func (c *idServiceClient) Generate(ctx context.Context, in *GenerateRequest, opt
 
 func (c *idServiceClient) Verify(ctx context.Context, in *VerifyRequest, opts ...grpc.CallOption) (*VerifyResult, error) {
 	out := new(VerifyResult)
-	err := c.cc.Invoke(ctx, "/mealey.api.ids.v1.IdService/Verify", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/mealeyau.api.ids.v1.IdService/Verify", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -55,7 +55,7 @@ func (c *idServiceClient) Verify(ctx context.Context, in *VerifyRequest, opts ..
 
 func (c *idServiceClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResult, error) {
 	out := new(DeleteResult)
-	err := c.cc.Invoke(ctx, "/mealey.api.ids.v1.IdService/Delete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/mealeyau.api.ids.v1.IdService/Delete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -112,7 +112,7 @@ func _IdService_Generate_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mealey.api.ids.v1.IdService/Generate",
+		FullMethod: "/mealeyau.api.ids.v1.IdService/Generate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(IdServiceServer).Generate(ctx, req.(*GenerateRequest))
@@ -130,7 +130,7 @@ func _IdService_Verify_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mealey.api.ids.v1.IdService/Verify",
+		FullMethod: "/mealeyau.api.ids.v1.IdService/Verify",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(IdServiceServer).Verify(ctx, req.(*VerifyRequest))
@@ -148,7 +148,7 @@ func _IdService_Delete_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/mealey.api.ids.v1.IdService/Delete",
+		FullMethod: "/mealeyau.api.ids.v1.IdService/Delete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(IdServiceServer).Delete(ctx, req.(*DeleteRequest))
@@ -160,7 +160,7 @@ func _IdService_Delete_Handler(srv interface{}, ctx context.Context, dec func(in
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var IdService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "mealey.api.ids.v1.IdService",
+	ServiceName: "mealeyau.api.ids.v1.IdService",
 	HandlerType: (*IdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
